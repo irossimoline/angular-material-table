@@ -14,6 +14,6 @@ export class TableElementFactory {
   }
 
   static isValidatorDefined(newElement: any) {
-    return newElement.validator != null && newElement.validator != undefined; 
+    return newElement.validator !== undefined && newElement.validator !== null;
   }
 }

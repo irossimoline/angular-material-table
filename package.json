@@ -1,56 +1,77 @@
 {
-  "version": "0.8.0",
-  "name": "angular4-material-table",
-  "description": "Angular 4 table based on @angular/cdk table structure, to allow row insertion, edition, validation and deletion.",
+  "name": "@e-is/ngx-material-table",
+  "description": "Angular 11 table based on @angular/cdk table structure, to allow row insertion, edition, validation and deletion.",
+  "version": "0.11.9",
+  "license": "MIT",
+  "author": "Ignacio Rossi <irossimoline>",
   "keywords": [
     "angular",
-    "angular4",
+    "angular 11",
     "table",
     "inline validation",
-    "angular material table"
+    "material design",
+    "angular material table",
+    "ngx material table",
+    "ngx table"
   ],
-  "scripts": {
-    "transpile": "ngc",
-    "package": "rollup -c",
-    "minify": "uglifyjs dist/bundles/angular4-material-table.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/angular4-material-table.umd.min.js",
-    "build": "npm run transpile && npm run package && npm run minify"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e-is/ngx-material-table.git"
   },
+  "homepage": "https://github.com/e-is/ngx-material-table",
+  "bugs": {
+    "url": "https://github.com/e-is/ngx-material-table/issues"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "lint": "ng lint",
+    "packagr": "ng-packagr -p ng-package.json",
+    "publish": "npm run packagr && cd dist && npm publish",
+    "publish-dev": "npm run packagr && cd dist && npm publish --userconfig=.local/.npmrc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "bundles/ngx-material-table.umd.js",
+  "module": "index.js",
+  "typings": "index.d.ts",
+  "private": false,
   "dependencies": {
-    "@angular/common": "^8.0.2",
-    "@angular/core": "^8.0.2",
-    "@angular/forms": "^8.0.2",
-    "@angular/cdk": "^8.0.1",
-    "core-js": "^2.5.7",
-    "rxjs": "^6.5.2",
-    "zone.js": "^0.9.1",
     "lodash.clonedeep": "^4.5.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.3",
-    "@angular/cli": "^8.0.3",
-    "@angular/compiler": "^8.0.2",
-    "@angular/compiler-cli": "^8.0.2",
-    "@angular/language-service": "^8.0.2",
-    "@types/jasmine": "2.8.8",
-    "@types/node": "~10.14.9",
-    "codelyzer": "~4.5.0",
-    "rollup": "^0.60.2",
-    "ts-node": "~6.0.3",
-    "tslint": "~5.10.0",
-    "typescript": "~3.4.5",
-    "uglify-js": "^3.6.0"
-  },
-  "main": "bundles/angular4-material-table.umd.js",
-  "module": "index.js",
-  "typings": "index.d.ts",
-  "author": "Ignacio Rossi <irossimoline>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/irossimoline/angular4-material-table.git"
-  },
-  "homepage": "https://github.com/irossimoline/angular4-material-table",
-  "bugs": {
-    "url": "https://github.com/irossimoline/angular4-material-table/issues"
+    "@angular-devkit/build-angular": "~0.1100.6",
+    "@angular/animations": "^11.0.9",
+    "@angular/cdk": "^11.0.4",
+    "@angular/cli": "^11.0.7",
+    "@angular/common": "^11.0.6",
+    "@angular/compiler": "^11.0.7",
+    "@angular/compiler-cli": "^11.0.7",
+    "@angular/core": "^11.0.6",
+    "@angular/forms": "^11.0.6",
+    "@angular/language-service": "^11.0.7",
+    "@angular/material": "^11.0.3",
+    "@angular/platform-browser": "^11.0.6",
+    "@angular/platform-browser-dynamic": "^11.0.6",
+    "@rollup/plugin-commonjs": "~17.0.0",
+    "@rollup/plugin-node-resolve": "~11.0.0",
+    "@types/jasmine": "3.6.2",
+    "@types/node": "~12.19.8",
+    "codelyzer": "~6.0.1",
+    "core-js": "^3.8.0",
+    "material-design-icons": "^3.0.1",
+    "ng-packagr": "^11.0.3",
+    "sass": "^1.29.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.34.0",
+    "rxjs": "6.6.3",
+    "ts-node": "~9.0.0",
+    "tslib": "~2.0.3",
+    "tslint": "~6.1.3",
+    "typescript": "~4.0.5",
+    "uglify-es": "^3.3.10",
+    "zone.js": "^0.11.3"
   }
 }

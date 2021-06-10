@@ -1,27 +1,22 @@
-import { FormGroup } from '@angular/forms';
-
-import { TableDataSource } from './table-data-source';
-
-import { TableElement } from './table-element';
+import {TableElement} from './table-element';
 
 export class TableElementTemplateDriven<T> extends TableElement<T> {
-  id: number;
+
   _editing: boolean;
   _currentData: T;
-  originalData?: T;
-  source: TableDataSource<T>;
 
   get validator(): any {
-    return null;
+    return undefined;
   }
 
-  set validator(value: any) { }
+  set validator(value: any) {
+  }
 
   get currentData(): T {
     return this._currentData;
   }
 
-  set currentData(data :T) {
+  set currentData(data: T) {
     this._currentData = data;
   }
 
@@ -29,7 +24,7 @@ export class TableElementTemplateDriven<T> extends TableElement<T> {
     return this._editing;
   }
 
-  set editing(value :boolean) {
+  set editing(value: boolean) {
     this._editing = value;
   }
 

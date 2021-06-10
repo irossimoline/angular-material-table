@@ -1,29 +1,29 @@
-# Angular4 material table (angular4+)
+# Angular material table (Angular 10+)
+
+**Forked from [angular4-material-table](https://github.com/irossimoline/angular4-material-table)**
 
 This project extends `@angular/cdk` data-table, also used in `@angular/material` table.
 
 It extends `@angular/cdk/collections` DataSource in order to include a row structure, allowing row creation, inline row edition, deletion and validation.
 
 Supported angular versions: 
-- Angular 4 (v0.1.8)
-- Angular 5 (v0.2.0)
-- Angular 6 (v0.6.0)
-- Angular 7 (v0.7.0)
-- Angular 8 (v0.8.0)
+- Angular <= 9: Please use [angular4-material-table](https://github.com/irossimoline/angular4-material-table)
+- Angular 10 (v0.10.0)
+- Angular 11 (v0.11.0)
 
-![angular4-material-table](https://i.imgur.com/ufilXlv.gif)
+![@e-is/ngx-material-table](https://i.imgur.com/ufilXlv.gif)
 
 ## Installation
 
 To install the package run:
 
-`npm install angular4-material-table`
+`npm install @e-is/ngx-material-table`
 
 ## Example
 
-Example of using `angular4-material-table`:
+Example of using `@e-is/ngx-material-table`:
 
-![angular4-material-table](https://i.imgur.com/vncajJG.png)
+![@e-is/ngx-material-table](https://i.imgur.com/vncajJG.png)
 
 ![Other example](https://i.imgur.com/5ed814s.png)
 
@@ -44,7 +44,7 @@ class TableElement<T> {
   id: number;
   editing: boolean;
   currentData?: T;
-  originalData: T;
+  originalData?: T;
   source: TableDataSource<T>;
   validator: FormGroup; // Used only in reactive forms.
 
@@ -77,16 +77,16 @@ class TableDataSource<T> {
 
 ### Angular4 material table example
 
-Angular 4 material table use example:
-![Example of angular4-material-table use](https://i.imgur.com/ath56FU.png)
+Angular material table use example:
+![Example of @e-is/ngx-material-table use](https://i.imgur.com/ath56FU.png)
 
 [See this package in action](https://stackblitz.com/edit/angular-tj9f6y)
 
 #### Optional libraries
 Optional libraries used in the example:
 ```
-"@angular/material": "2.0.0-beta.12",
-"@angular/forms": "4.4.4", // <- For inline validation
+"@angular/material": "11.0.1",
+"@angular/forms": "11.0.2", // <- For inline validation
 "font-awesome": "4.7.0"
 ```
 

@@ -1,19 +1,32 @@
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+
 export default {
-  input: 'dist/index.js',
+  input: 'dist/out-tsc/index.js',
   output: {
-    file: 'dist/bundles/angular4-material-table.umd.js',
     format: 'umd',
-    sourcemap: false,
-    name: 'ng.angular4-material-table',
+    sourcemap: true,
+    file: 'dist/bundles/ngx-material-table.umd.js',
+    name: 'ng.ngx-material-table',
   },
-  globals: {
-    '@angular/core': 'ng.core',
-    '@angular/forms': 'ng.forms',
-    '@angular/common': 'ng.common',
-    '@angular/cdk/collections': 'ng.cdk.collections',
-    'rxjs/Observable': 'Rx',
-    'rxjs/Subject': 'Rx',
-    'rxjs/BehaviorSubject': 'Rx',
-    'lodash.clonedeep':'index'
-  }
+  plugins: [
+    resolve({
+      mainFields: ['jsnext', 'main'],
+      customResolveOptions: {
+        moduleDirectory: 'node_modules'
+      }
+    }),
+    commonjs()
+  ],
+  external: [
+    '@angular/core',
+    '@angular/common',
+    '@angular/forms',
+    '@angular/cdk/collections',
+    'rxjs/Observable',
+    'rxjs/Subject',
+    'rxjs/BehaviorSubject',
+    'lodash.clonedeep',
+    'tslib'
+  ]
 }

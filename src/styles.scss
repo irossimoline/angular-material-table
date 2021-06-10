@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  color: #333333;
+}
+
+app-root {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@import '~@angular/material/theming';
+@include mat-core();
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$theming-material-components-primary: mat-palette($mat-indigo);
+$theming-material-components-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$theming-material-components-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theming-material-components-theme: mat-light-theme($theming-material-components-primary, $theming-material-components-accent, $theming-material-components-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theming-material-components-theme);
+
+@import '~material-design-icons/iconfont/material-icons.css';

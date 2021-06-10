@@ -1,0 +1,39 @@
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field [floatLabel]="row.editing ? 'auto' : 'never'">
+        <input [formControl]="row.validator.controls['name']" placeholder="Name" matInput>
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="age">
+    <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field [floatLabel]="row.editing ? 'auto' : 'never'">
+        <input [formControl]="row.validator.controls['age']" type="number" placeholder="Age" matInput>
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actionsColumn">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="accent" (click)="dataSource.createNew()">
+        <mat-icon>add_circle</mat-icon>
+      </button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button *ngIf="!row.editing" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
+        <mat-icon>create</mat-icon>
+      </button>
+      <button *ngIf="row.editing" mat-icon-button color="primary" focusable="false" (click)="row.confirmEditCreate()">
+        <mat-icon>done</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" focusable="false" (click)="row.cancelOrDelete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
